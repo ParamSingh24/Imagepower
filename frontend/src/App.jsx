@@ -7,6 +7,7 @@ function App() {
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [resultImage, setResultImage] = useState(null);
+  const [resultNote, setResultNote] = useState(null);
   const [loading, setLoading] = useState(false);
   const [energy, setEnergy] = useState(100);
   const [limitReached, setLimitReached] = useState(false);
@@ -33,6 +34,7 @@ function App() {
       return;
     }
     setError(null);
+    setResultNote(null);
     setLoading(true);
 
     const formData = new FormData();
@@ -52,6 +54,7 @@ function App() {
       }
 
       setResultImage(data.image);
+      setResultNote(data.note || null);
       fetchQuota(); // Update quota
     } catch (err) {
       setError(err.message);
@@ -150,6 +153,12 @@ function App() {
                       Download
                     </a>
                   </div>
+                  {/* Warning/Note Overlay */}
+                  {resultNote && (
+                    <div className="absolute bottom-4 left-4 right-4 bg-black/80 text-yellow-300 text-xs p-3 rounded-xl border border-yellow-500/30 backdrop-blur-md">
+                      <span className="font-bold">Note:</span> {resultNote}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="text-center p-8">

@@ -98,7 +98,7 @@ def generate_image():
 
     try:
         # Use Gemini 1.5 Flash or higher
-        model = genai.GenerativeModel('gemini-2.5-flash') 
+        model = genai.GenerativeModel('gemini-1.5-flash') 
         response = model.generate_content([prompt, img1, img2])
         
         # Check for image content in response
