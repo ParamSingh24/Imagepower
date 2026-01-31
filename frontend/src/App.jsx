@@ -87,7 +87,7 @@ function App() {
         <div className="w-full max-w-6xl flex flex-col items-center justify-center h-full">
           <header className="text-center mb-6 animate-fade-in-up flex-shrink-0 pointer-events-auto">
             <h1 className="text-4xl font-bold mb-2 tracking-tight">
-              <span className="text-white">AI Fashion</span> <span className="gradient-text">Editor</span>
+              <span className="text-white">AI Fashion</span> <span className="text-green-400">Editor</span>
             </h1>
             <p className="text-white/60 text-sm">Superimpose high-fashion items seamlessly.</p>
           </header>
